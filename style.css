@@ -1,0 +1,122 @@
+/* general rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f8f9;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* header */
+header {
+    background-color: white;
+}
+
+header img {
+    margin: 10px 0px 10px 20px;
+    vertical-align: middle;
+}
+
+header span {
+    font-size: 40px;
+    vertical-align: middle;
+}
+
+/* main body and container */
+.main-body {
+    background-color: white;
+    width: 70%;
+    margin: 40px auto;
+    border-radius: 5px;
+    color: #444851;
+    padding-bottom: 30px;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* nav */
+nav {
+    border-bottom: 2px solid #f6f8f9;
+}
+nav button {
+    font-size: 11px;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+#light-blue {
+    background-color: #47adf1;
+    color: white;
+    padding: 7px 10px;
+    border: 0px;
+}
+
+.red {
+    color: red;
+}
+
+/* main */
+section {
+    margin: 25px 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.section-title {
+    font-size: 20px;
+}
+
+.section-title:before {
+    content: '\25BC';
+}
+
+li{
+    margin: 20px 0;
+    position: relative;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.sign {
+    font-size: 10px;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin: 0 1rem;
+    border-radius: 50%;
+    line-height: 15px;
+    text-align: center;
+    vertical-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.check {
+    color: green;
+    border: 1px solid green;
+}
+
+.cross {
+    color: red;
+    border: 1px solid red;
+}
+
+.delete {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    cursor: pointer;
+    user-select: none;
+}
+

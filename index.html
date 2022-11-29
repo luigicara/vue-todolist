@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <title>toBoolist</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+</head>
+<body>
+    <header>
+        <img src="img/Logo.png" alt="logo">
+        <span>
+            <strong>Toboolist</strong>
+        </span>
+    </header>
+
+    <div id="app" class="main-body">
+        <nav>
+            <div class="container">
+                <input type="text" v-model="newTask" @keyup.enter="addTask">
+                <button id="light-blue" @click="addTask">Add Task</button>
+
+                <div class="red" v-if="error">Inserisci più di 5 caratteri!</div>
+            </div>
+        </nav>
+
+        <main>
+            <div class="container">
+                <!-- section new task -->
+                <section>
+                    <ul v-if="tasks.length > 0">
+                        <strong class="section-title">To do</strong>
+
+                        <li v-for="(task, index) in tasks">
+                            <span @click="doUndo(task)" class="sign" :class="task.done ? 'check' : 'cross'">
+                                {{ task.done ? '&check;' : '&cross;' }}
+                            </span>
+
+                            <span :class="task.done ? 'line-through' : ''">
+                                {{ task.text }}
+                            </span>
+
+                            <span class="delete" @click="removeTask(index)"><strong>X</strong></span>
+                        </li>
+                    </ul>
+
+                    <div v-else>Non ci sono task...</div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
